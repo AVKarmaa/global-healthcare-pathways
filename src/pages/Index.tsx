@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CourseTable from "@/components/CourseCard";
@@ -44,14 +43,6 @@ const Index = () => {
       answer: "Our classes are scheduled to accommodate various needs. For full-time students, classes typically run Monday to Friday, 9:00 AM to 3:00 PM. Part-time and evening options are also available, with sessions on weekends or weekday evenings from 6:00 PM to 9:00 PM."
     },
     {
-      question: "Is accommodation available for students?",
-      answer: "While we don't provide on-campus accommodation, our student services team can assist with finding suitable housing options nearby. We maintain partnerships with several housing providers and can offer guidance on affordable and convenient accommodation choices."
-    },
-    {
-      question: "What is your refund policy?",
-      answer: "Course fees are refundable up to 30 days before the course start date, minus an administrative fee. Cancellations within 30 days of the start date are eligible for a 50% refund. No refunds are provided once the course has commenced. Special circumstances may be considered on a case-by-case basis."
-    },
-    {
       question: "How will the international recognition of the BTEC qualification benefit me?",
       answer: "Pearson BTEC qualifications are widely recognized by employers and universities globally, providing you with a strong foundation for international career opportunities and further academic pursuits. Many healthcare institutions worldwide value BTEC qualifications, opening doors to positions in diverse healthcare settings internationally."
     },
@@ -71,6 +62,16 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <div className="bg-white py-4 border-b">
+        <div className="container mx-auto px-4">
+          <img 
+            src="/lovable-uploads/aa4ca7a6-eabb-47d7-9fae-f7b8c85624b4.png" 
+            alt="Empowered Skills Logo" 
+            className="h-16 w-auto"
+          />
+        </div>
+      </div>
+
       <HeroSection />
       
       <div className="container mx-auto px-4 py-12">
@@ -123,17 +124,32 @@ const Index = () => {
               <div className="bg-healthcare-50 p-6 rounded-lg border border-healthcare-100">
                 <h3 className="font-medium text-xl text-healthcare-700 mb-4">Our Contact Information</h3>
                 
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <Globe className="h-5 w-5 mr-3 text-healthcare-700 mt-1" />
-                    <div>
-                      <p className="font-medium text-healthcare-800">Centre Address</p>
-                      <p className="text-gray-600">
-                        Empowered Skills Private Limited,<br />
-                        SCO 15, 5th Floor, 97 Acre Scheme,<br />
-                        Ranjit Avenue, D Block,<br />
-                        Amritsar - 143001
-                      </p>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex items-start mb-4">
+                      <Globe className="h-5 w-5 mr-3 text-healthcare-700 mt-1" />
+                      <div>
+                        <p className="font-medium text-healthcare-800">Head Office</p>
+                        <p className="text-gray-600">
+                          Empowered Skills Private Limited<br />
+                          2, Chandragupta Marg,<br />
+                          Chanakyapuri, New Delhi – 110021,<br />
+                          India
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start">
+                      <Globe className="h-5 w-5 mr-3 text-healthcare-700 mt-1" />
+                      <div>
+                        <p className="font-medium text-healthcare-800">Centre Address</p>
+                        <p className="text-gray-600">
+                          Empowered Skills Private Limited,<br />
+                          SCO 15, 5th Floor, 97 Acre Scheme,<br />
+                          Ranjit Avenue, D Block,<br />
+                          Amritsar - 143001
+                        </p>
+                      </div>
                     </div>
                   </div>
                   

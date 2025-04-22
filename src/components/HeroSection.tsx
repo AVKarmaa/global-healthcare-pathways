@@ -21,7 +21,7 @@ const HeroSection = () => {
               <Button size="lg" className="bg-white text-healthcare-800 hover:bg-gray-100">
                 Explore Courses
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" className="bg-healthcare-600 text-white border-2 border-white">
                 Learn More
               </Button>
             </div>
@@ -38,7 +38,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="text-sm">Call Us</p>
-                    <p className="font-semibold">+91 1234567890</p>
+                    <p className="font-semibold">+91 183 4004836</p>
                   </div>
                 </div>
                 
@@ -48,7 +48,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="text-sm">Email Us</p>
-                    <p className="font-semibold">admissions@empoweredskills.org</p>
+                    <p className="font-semibold">neelu.gauri@empoweredskills.org</p>
                   </div>
                 </div>
               </div>

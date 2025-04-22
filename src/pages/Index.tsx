@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CourseTable from "@/components/CourseCard";
@@ -9,6 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import Globe from "@/components/icons/Globe";
 import Phone from "@/components/icons/Phone";
 import Mail from "@/components/icons/Mail";
+import PearsonSection from "@/components/PearsonSection";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -96,6 +98,10 @@ const Index = () => {
               />
             </TabsContent>
           </Tabs>
+        </section>
+
+        <section className="mb-16">
+          <PearsonSection />
         </section>
         
         <section className="mb-16">

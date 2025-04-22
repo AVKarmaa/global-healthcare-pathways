@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -7,7 +8,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] opacity-20 bg-cover bg-center"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24 relative z-10">
+      <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="md:w-3/5">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -20,7 +21,7 @@ const HeroSection = () => {
               <Button size="lg" className="bg-white text-healthcare-800 hover:bg-gray-100">
                 Explore Courses
               </Button>
-              <Button size="lg" variant="outline" className="border-accent bg-accent text-white hover:bg-accent/90">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 Learn More
               </Button>
             </div>

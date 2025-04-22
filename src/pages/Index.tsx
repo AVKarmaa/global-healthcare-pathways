@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -13,7 +12,6 @@ import Footer from "@/components/Footer";
 const Index = () => {
   const [activeTab, setActiveTab] = useState("all");
   
-  // Scroll to contact form
   const scrollToContact = () => {
     document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -38,7 +36,9 @@ const Index = () => {
         "Quality Improvement Officer (potential for international roles)"
       ],
       duration: "2 years full-time, flexible part-time options available",
-      level: "5"
+      level: "5",
+      imageSrc: "https://images.unsplash.com/photo-1516549655976-c0ce83810b7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      eligibility: "Successful completion of Level 4 qualification or equivalent, relevant work experience may be considered."
     },
     {
       title: "Pearson BTEC International Level 4 Higher National Certificate in Healthcare Practice (Healthcare Management)",
@@ -57,7 +57,9 @@ const Index = () => {
         "Team Leader (potential for international roles)"
       ],
       duration: "1 year full-time, flexible part-time options available",
-      level: "4"
+      level: "4",
+      imageSrc: "https://images.unsplash.com/photo-1516549655976-c0ce83810b7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      eligibility: "Successful completion of secondary education or equivalent, basic understanding of healthcare systems preferred."
     },
     {
       title: "Pearson BTEC International Level 5 Higher National Diploma in Healthcare Practice (Nursing and Healthcare Assistant)",
@@ -78,7 +80,9 @@ const Index = () => {
         "Residential care facilities (potential for international roles)"
       ],
       duration: "2 years full-time, flexible part-time options available",
-      level: "5"
+      level: "5",
+      imageSrc: "https://images.unsplash.com/photo-1516549655976-c0ce83810b7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      eligibility: "Successful completion of Level 4 qualification or equivalent, interest in direct patient care."
     },
     {
       title: "Pearson BTEC International Level 4 Higher National Certificate in Healthcare Practice (Nursing and Healthcare Support)",
@@ -97,10 +101,12 @@ const Index = () => {
         "Clinical Support Worker (potential for international roles)"
       ],
       duration: "1 year full-time, flexible part-time options available",
-      level: "4"
+      level: "4",
+      imageSrc: "https://images.unsplash.com/photo-1516549655976-c0ce83810b7f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      eligibility: "Successful completion of secondary education or equivalent, a caring attitude and passion for healthcare."
     }
   ];
-  
+
   const faqs = [
     {
       question: "What are the class timings?",
@@ -153,12 +159,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <HeroSection />
       
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
-        {/* Course Section */}
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <section className="mb-16">
           <div className="flex flex-col items-center justify-center text-center mb-10">
             <h2 className="text-3xl font-bold text-healthcare-800 mb-4">Our Pearson BTEC Healthcare Practice Courses</h2>
@@ -181,13 +184,7 @@ const Index = () => {
                 {filteredCourses.map((course, index) => (
                   <CourseCard
                     key={index}
-                    title={course.title}
-                    description={course.description}
-                    code={course.code}
-                    audience={course.audience}
-                    outcomes={course.outcomes}
-                    opportunities={course.opportunities}
-                    duration={course.duration}
+                    {...course}
                     onApplyClick={scrollToContact}
                   />
                 ))}
@@ -196,36 +193,34 @@ const Index = () => {
           </Tabs>
         </section>
         
-        {/* Why Choose Us Section */}
         <section className="mb-16">
           <WhyChooseUs />
         </section>
         
-        {/* Eligibility Criteria */}
         <section className="mb-16">
-          <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
-            <h2 className="text-2xl font-bold text-healthcare-800 mb-6">Eligibility Criteria</h2>
-            <div className="space-y-6">
-              {eligibilityItems.map((item, index) => (
-                <div key={index} className="pb-4 border-b border-gray-200 last:border-0 last:pb-0">
-                  <h3 className="font-medium text-lg text-healthcare-700 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.requirements}</p>
-                </div>
-              ))}
-              
-              <div className="pt-4">
-                <h3 className="font-medium text-lg text-healthcare-700 mb-2">General Requirements for All Courses</h3>
-                <ul className="list-disc pl-5 text-gray-600 space-y-1">
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="md:w-1/2">
+                <h2 className="text-2xl font-bold text-healthcare-800 mb-6">General Requirements for All Courses</h2>
+                <ul className="list-disc pl-5 text-gray-600 space-y-2">
                   <li>English Language Proficiency: IELTS 5.5 or equivalent</li>
                   <li>Valid identification documents</li>
                   <li>Completed application form</li>
+                  <li>Recent passport-size photographs</li>
+                  <li>Statement of purpose</li>
                 </ul>
+              </div>
+              <div className="md:w-1/2">
+                <img 
+                  src="https://images.unsplash.com/photo-1560439515-437c3457a2df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Successful healthcare students"
+                  className="rounded-lg shadow-lg w-full h-64 object-cover"
+                />
               </div>
             </div>
           </div>
         </section>
         
-        {/* Admission Process */}
         <section className="mb-16">
           <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
             <h2 className="text-2xl font-bold text-healthcare-800 mb-6">Admission Process</h2>
@@ -308,12 +303,10 @@ const Index = () => {
           </div>
         </section>
         
-        {/* FAQ Section */}
         <section className="mb-16">
           <FAQSection faqs={faqs} />
         </section>
         
-        {/* Contact Form Section */}
         <section id="contact-section" className="mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
@@ -371,7 +364,6 @@ const Index = () => {
         </section>
       </div>
       
-      {/* Footer */}
       <Footer />
     </div>
   );

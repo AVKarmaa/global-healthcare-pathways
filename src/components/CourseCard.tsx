@@ -12,6 +12,8 @@ interface CourseCardProps {
   opportunities: string[];
   duration: string;
   onApplyClick: () => void;
+  imageSrc: string;
+  eligibility: string;
 }
 
 const CourseCard = ({
@@ -22,25 +24,34 @@ const CourseCard = ({
   outcomes,
   opportunities,
   duration,
-  onApplyClick
+  onApplyClick,
+  imageSrc,
+  eligibility
 }: CourseCardProps) => {
   return (
     <Card className="w-full border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300 bg-white overflow-hidden">
-      <div className="h-2 bg-gradient-to-r from-healthcare-500 to-medical-500"></div>
-      <CardHeader>
-        <div className="flex justify-between items-start gap-2">
-          <CardTitle className="text-xl font-bold text-healthcare-800">{title}</CardTitle>
-          <Badge variant="outline" className="bg-healthcare-50 text-healthcare-700 border-healthcare-200">
+      <div className="h-48 relative overflow-hidden">
+        <img 
+          src={imageSrc} 
+          alt={title} 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute top-0 right-0 m-4">
+          <Badge variant="outline" className="bg-white/90 text-healthcare-700 border-healthcare-200">
             {code}
           </Badge>
         </div>
+      </div>
+      <div className="h-2 bg-gradient-to-r from-healthcare-500 to-medical-500"></div>
+      <CardHeader>
+        <CardTitle className="text-xl font-bold text-healthcare-800">{title}</CardTitle>
         <CardDescription className="mt-2">
           {description}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <h4 className="text-sm font-medium text-healthcare-700 mb-1">Target Audience</h4>
+          <h4 className="text-sm font-medium text-healthcare-700 mb-1">Who is it for?</h4>
           <p className="text-gray-600 text-sm">{audience}</p>
         </div>
         
@@ -60,6 +71,11 @@ const CourseCard = ({
               <li key={index}>{opportunity}</li>
             ))}
           </ul>
+        </div>
+        
+        <div>
+          <h4 className="text-sm font-medium text-healthcare-700 mb-1">Eligibility</h4>
+          <p className="text-gray-600 text-sm">{eligibility}</p>
         </div>
         
         <div>

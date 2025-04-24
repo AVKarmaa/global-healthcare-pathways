@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Button } from "@/components/ui/button";
 
 const HeroSection = ({ onExploreClick, onLearnMoreClick }: { 
@@ -49,17 +50,8 @@ const HeroSection = ({ onExploreClick, onLearnMoreClick }: {
                   </div>
                   <div>
                     <p className="text-sm">Call Us</p>
+                    <p className="font-semibold">+91 183 4004836</p>
                     <p className="font-semibold">+91 9876711110</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center">
-                  <div className="mr-3 p-2 rounded-full bg-white/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  </div>
-                  <div>
-                    <p className="text-sm">Email Us</p>
-                    <p className="font-semibold">admissions@empoweredskills.org</p>
                   </div>
                 </div>
               </div>

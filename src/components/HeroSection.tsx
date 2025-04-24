@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
 
 const HeroSection = ({ onExploreClick, onLearnMoreClick }: { 
   onExploreClick: () => void;
@@ -52,7 +52,10 @@ const HeroSection = ({ onExploreClick, onLearnMoreClick }: {
                     <p className="text-sm">Call Us</p>
                     <p className="font-semibold">+91 183 4004836</p>
                     <p className="font-semibold">+91 9876711110</p>
-                    <p className="text-sm mt-1">Email: admissions@empoweredskills.org</p>
+                    <div className="flex items-center mt-1">
+                      <Mail className="mr-2 text-white/70" size={16} />
+                      <p className="text-sm">admissions@empoweredskills.org</p>
+                    </div>
                   </div>
                 </div>
               </div>

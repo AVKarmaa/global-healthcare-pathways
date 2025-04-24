@@ -18,6 +18,10 @@ const Index = () => {
     document.getElementById("contact-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToCourses = () => {
+    document.getElementById("courses-section")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const courses = [
     {
       title: "Pearson BTEC International Level 5 Higher National Diploma in Healthcare Practice (Healthcare Management)",
@@ -56,26 +60,24 @@ const Index = () => {
     }
   ];
 
-  const filteredCourses = activeTab === "all" 
-    ? courses 
-    : courses.filter(course => course.code.includes(activeTab === "5" ? "5" : "4"));
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white py-4 border-b">
         <div className="container mx-auto px-4">
-          <img 
-            src="/lovable-uploads/aa4ca7a6-eabb-47d7-9fae-f7b8c85624b4.png" 
-            alt="Empowered Skills Logo" 
-            className="h-16 w-auto"
-          />
+          <a href="https://empoweredskills.org/" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="/lovable-uploads/aa4ca7a6-eabb-47d7-9fae-f7b8c85624b4.png" 
+              alt="Empowered Skills Logo" 
+              className="h-16 w-auto"
+            />
+          </a>
         </div>
       </div>
 
-      <HeroSection />
+      <HeroSection onExploreClick={scrollToCourses} onLearnMoreClick={scrollToContact} />
       
       <div className="container mx-auto px-4 py-12">
-        <section className="mb-16">
+        <section id="courses-section" className="mb-16">
           <div className="flex flex-col items-center justify-center text-center mb-10">
             <h2 className="text-3xl font-bold text-healthcare-800 mb-4">Our Pearson BTEC Healthcare Practice Courses</h2>
             <p className="text-gray-600 max-w-3xl">
@@ -83,22 +85,10 @@ const Index = () => {
             </p>
           </div>
           
-          <Tabs defaultValue="all" className="w-full" onValueChange={setActiveTab}>
-            <div className="flex justify-center mb-6">
-              <TabsList className="bg-healthcare-50">
-                <TabsTrigger value="all" className="data-[state=active]:bg-healthcare-600 data-[state=active]:text-white">All Courses</TabsTrigger>
-                <TabsTrigger value="5" className="data-[state=active]:bg-healthcare-600 data-[state=active]:text-white">Level 5</TabsTrigger>
-                <TabsTrigger value="4" className="data-[state=active]:bg-healthcare-600 data-[state=active]:text-white">Level 4</TabsTrigger>
-              </TabsList>
-            </div>
-            
-            <TabsContent value={activeTab} className="mt-0">
-              <CourseTable
-                courses={filteredCourses}
-                onApplyClick={scrollToContact}
-              />
-            </TabsContent>
-          </Tabs>
+          <CourseTable
+            courses={courses}
+            onApplyClick={scrollToContact}
+          />
         </section>
 
         <section className="mb-16">
@@ -169,15 +159,25 @@ const Index = () => {
                     <Mail className="h-5 w-5 mr-3 text-healthcare-700" />
                     <div>
                       <p className="font-medium text-healthcare-800">Email</p>
-                      <p className="text-gray-600">neelu.gauri@empoweredskills.org</p>
+                      <p className="text-gray-600">admissions@empoweredskills.org</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="flex justify-center">
-              <ContactForm />
+            <div className="flex justify-center w-full">
+              <div className="w-full bg-white rounded-lg shadow-lg p-4 border-t-4 border-t-healthcare-600">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSf5HfHFQM1-FITG8krUos5u-AG7U2EnvzyR9NGB64Pa66VYYA/viewform?embedded=true" 
+                  width="100%" 
+                  height="600" 
+                  className="border-0"
+                  title="Contact Form"
+                >
+                  Loading…
+                </iframe>
+              </div>
             </div>
           </div>
         </section>

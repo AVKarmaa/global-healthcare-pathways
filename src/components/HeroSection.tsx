@@ -1,7 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 
-const HeroSection = () => {
+const HeroSection = ({ onExploreClick, onLearnMoreClick }: { 
+  onExploreClick: () => void;
+  onLearnMoreClick: () => void;
+}) => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-healthcare-800 to-medical-900 text-white">
       <div className="absolute inset-0 z-0">
@@ -18,10 +21,18 @@ const HeroSection = () => {
               Take the first step towards international opportunities in healthcare with our Pearson BTEC qualifications. Join a community of healthcare professionals making a difference worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-healthcare-800 hover:bg-gray-100">
+              <Button 
+                size="lg" 
+                className="bg-white text-healthcare-800 hover:bg-gray-100"
+                onClick={onExploreClick}
+              >
                 Explore Courses
               </Button>
-              <Button size="lg" className="bg-healthcare-600 text-white border-2 border-white">
+              <Button 
+                size="lg" 
+                className="bg-healthcare-600 text-white border-2 border-white"
+                onClick={onLearnMoreClick}
+              >
                 Learn More
               </Button>
             </div>
@@ -38,7 +49,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="text-sm">Call Us</p>
-                    <p className="font-semibold">+91 183 4004836</p>
+                    <p className="font-semibold">+91 9876711110</p>
                   </div>
                 </div>
                 
@@ -48,7 +59,7 @@ const HeroSection = () => {
                   </div>
                   <div>
                     <p className="text-sm">Email Us</p>
-                    <p className="font-semibold">neelu.gauri@empoweredskills.org</p>
+                    <p className="font-semibold">admissions@empoweredskills.org</p>
                   </div>
                 </div>
               </div>

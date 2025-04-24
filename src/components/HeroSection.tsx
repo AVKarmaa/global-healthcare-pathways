@@ -52,6 +52,7 @@ const HeroSection = ({ onExploreClick, onLearnMoreClick }: {
                     <p className="text-sm">Call Us</p>
                     <p className="font-semibold">+91 183 4004836</p>
                     <p className="font-semibold">+91 9876711110</p>
+                    <p className="text-sm mt-1">Email: admissions@empoweredskills.org</p>
                   </div>
                 </div>
               </div>
